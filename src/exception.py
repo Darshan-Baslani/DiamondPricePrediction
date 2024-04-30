@@ -1,5 +1,7 @@
 import sys
-from logger import logging
+
+sys.path.append("/media/darshan/Code/DiamondPricePrediction")
+from src.logger import logging
 
 
 def error_message_detail(error, error_detail):
