@@ -22,3 +22,16 @@ def save_obj(obj, path):
     except Exception as e:
         logging.info("Exception occured while saving the object")
         raise CustomException(e, sys)
+
+
+i = 0
+
+
+def model_evaluation(model, i, X_test, y_test, model_list):
+    y_pred = model.predict(X_test)
+
+    r2 = r2_score(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+    mse = mean_squared_error(y_test, y_pred)
+
+    return r2 + mae + mse
