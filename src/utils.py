@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 import os
 import sys
-from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
+from sklearn.metrics import r2_score
 
 sys.path.append("/media/darshan/Code/DiamondPricePrediction")
 from src.logger import logging
@@ -31,7 +31,4 @@ def model_evaluation(model, i, X_test, y_test, model_list):
     y_pred = model.predict(X_test)
 
     r2 = r2_score(y_test, y_pred)
-    mae = mean_absolute_error(y_test, y_pred)
-    mse = mean_squared_error(y_test, y_pred)
-
-    return r2 + mae + mse
+    return r2
