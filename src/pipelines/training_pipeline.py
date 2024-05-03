@@ -1,9 +1,9 @@
 import pandas as pd
 import os
 import sys
-from src.components import data_transformation
 
 sys.path.append("/media/darshan/Code/DiamondPricePrediction")
+from src.components import data_transformation
 from src.components.data_ingestion import DataIngestion
 from src.exception import CustomException
 from src.components.data_transformation import DataTransformation

@@ -32,3 +32,12 @@ def model_evaluation(model, i, X_test, y_test, model_list):
 
     r2 = r2_score(y_test, y_pred)
     return r2
+
+
+def load_obj(path):
+    try:
+        with open(path, "rb") as obj:
+            return pickle.load(obj)
+    except Exception as e:
+        logging.info("error occured while loading the object")
+        raise CustomException(e, sys)
